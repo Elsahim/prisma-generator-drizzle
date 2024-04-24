@@ -45,6 +45,9 @@ function renderImportPath(path: string) {
 	if (getModuleResolution() === 'nodenext') {
 		return path.startsWith('.') ? `${path}.js` : path
 	}
+	if (getModuleResolution() === 'deno') {
+		return path.startsWith('.') ? `${path}.ts` : path
+	}
 
 	return path
 }
